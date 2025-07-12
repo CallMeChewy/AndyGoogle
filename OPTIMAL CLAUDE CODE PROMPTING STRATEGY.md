@@ -25,6 +25,7 @@ Start by reading the plan document and then ask me which priority you should tac
 **Break it into 3 separate Claude Code sessions:**
 
 #### **Session A: Round-Trip Testing (1-2 hours)**
+
 ```
 Focus: Complete Priority 1 from the plan - round-trip database testing.
 
@@ -37,7 +38,8 @@ Tasks:
 Use the SQLiteToMySQLConverter.py and database_testing.sh scripts from the plan.
 ```
 
-#### **Session B: Minimal Schema (1-2 hours)**  
+#### **Session B: Minimal Schema (1-2 hours)**
+
 ```
 Focus: Priority 2 - create minimal MySQL schema for AndyGoogle MVP.
 
@@ -50,6 +52,7 @@ Follow the "only include what's needed for next phase" principle from the plan.
 ```
 
 #### **Session C: AndyGoogle Foundation (2-3 hours)**
+
 ```
 Focus: Priority 3 - begin AndyGoogle development.
 
@@ -65,6 +68,7 @@ Use the detailed architecture from the plan document.
 ### **3. Context Files to Provide Claude Code:**
 
 **Before each session, ensure these files are in your project:**
+
 - `Project Himalaya - Session Handoff & Next Steps Plan.md` ✅ (you're downloading this)
 - `AndersonLibrary_Himalaya_GPU.csv` (your source data)
 - Current working SQLite database
@@ -73,16 +77,19 @@ Use the detailed architecture from the plan document.
 ### **4. Effective Follow-up Prompts:**
 
 #### **When Claude Code asks questions:**
+
 ```
 "Follow the guidance in the plan document. If you need to make a decision, use the most conservative/minimal approach that gets us to a working MVP fastest."
 ```
 
 #### **When you see issues:**
+
 ```
 "There's an issue with [specific problem]. Check the 'Potential Challenges & Solutions' section in the plan document - there might be a pre-planned solution."
 ```
 
 #### **To maintain momentum:**
+
 ```
 "Great progress! Move on to the next step in the current priority. Keep following the plan systematically."
 ```
@@ -107,21 +114,25 @@ Use the detailed architecture from the plan document.
 ### **7. Pro Tips for Best Results:**
 
 #### **Start Each Session With:**
+
 ```
 "I'm continuing Project Himalaya implementation. Read the plan document and tell me what we accomplished last time, then continue with [specific priority]."
 ```
 
 #### **When Stuck:**
+
 ```
 "Check the plan document section [specific section]. The solution should be documented there. If not, use the most minimal approach that works."
 ```
 
 #### **For Quality Control:**
+
 ```
 "Before finishing this task, validate it meets the success criteria listed in the plan document for this priority."
 ```
 
 #### **To Maintain Standards:**
+
 ```
 "Ensure all code follows Design Standard v2.1 (AIDEV-PascalCase-2.1). All database elements should use PascalCase naming."
 ```
@@ -129,18 +140,21 @@ Use the detailed architecture from the plan document.
 ### **8. Expected Claude Code Workflow:**
 
 **Phase 1: Discovery**
+
 - Reads plan document
 - Analyzes current project structure  
 - Identifies what needs to be built
 - Asks clarifying questions
 
 **Phase 2: Implementation**
+
 - Creates/modifies files systematically
 - Runs tests and validates results
 - Reports progress and issues
 - Follows the plan step-by-step
 
 **Phase 3: Validation**  
+
 - Tests the implementation
 - Compares against success criteria
 - Reports completion status
@@ -149,6 +163,7 @@ Use the detailed architecture from the plan document.
 ### **9. Sample Success Indicators:**
 
 **You'll know it's working well when Claude Code:**
+
 - References the plan document frequently
 - Asks specific technical questions (not vague ones)
 - Provides progress updates with concrete results
@@ -158,11 +173,13 @@ Use the detailed architecture from the plan document.
 ### **10. Troubleshooting Prompts:**
 
 **If Claude Code seems lost:**
+
 ```
 "Go back to the plan document. Focus only on [specific priority] and ignore everything else for now. What's the very next action according to the plan?"
 ```
 
 **If results don't match expectations:**
+
 ```
 "Check this result against the success criteria in the plan document. Does it meet the requirements? If not, what needs to be adjusted?"
 ```
