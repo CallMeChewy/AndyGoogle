@@ -93,6 +93,7 @@ anderson-library-service-key.json
 config/
 secrets/
 *.json
+*.js
 
 # Directories to ignore
 node_modules/
