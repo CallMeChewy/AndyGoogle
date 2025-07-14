@@ -1,12 +1,12 @@
 {
   "last_updated": "2025-07-14T12:09:49.818114",
-  "total_validations": 1,
-  "validations_passed": 1,
+  "total_validations": 5,
+  "validations_passed": 2,
   "validations_failed": 0,
-  "validations_blocked": 0,
-  "total_issues_found": 4,
-  "critical_issues_found": 0,
-  "high_issues_found": 4,
+  "validations_blocked": 2,
+  "total_issues_found": 24,
+  "critical_issues_found": 12,
+  "high_issues_found": 12,
   "recent_activity": [
     {
       "timestamp": "2025-07-14T12:09:49.817877",
@@ -14,6 +14,34 @@
       "result": "PASSED",
       "issues": 4,
       "commit_message": "Auto-update: 2025-07-12 23:09:02"
+    },
+    {
+      "timestamp": "2025-07-14T12:09:50.991485",
+      "operation": "AUTO_UPDATE",
+      "result": "PASSED",
+      "issues": 4,
+      "commit_message": "Auto-update: 2025-07-14 12:09:49"
+    },
+    {
+      "timestamp": "2025-07-14T12:25:13.915176",
+      "operation": "AUTO_UPDATE",
+      "result": "BLOCKED",
+      "issues": 8,
+      "commit_message": "Auto-update blocked due to security issues"
+    },
+    {
+      "timestamp": "2025-07-14T12:27:33.780303",
+      "operation": "AUTO_UPDATE",
+      "result": "BLOCKED",
+      "issues": 4,
+      "commit_message": "Auto-update blocked due to security issues"
+    },
+    {
+      "timestamp": "2025-07-14T12:35:01.649291",
+      "operation": "AUTO_REMEDIATION",
+      "result": "REMEDIATED",
+      "issues": 4,
+      "commit_message": "Auto-remediation of 4 security issues"
     }
   ]
 }

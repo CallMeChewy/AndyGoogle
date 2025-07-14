@@ -63,5 +63,301 @@
         }
       ]
     }
+  },
+  {
+    "Timestamp": "2025-07-14T12:09:50.991485",
+    "Operation": "AUTO_UPDATE",
+    "ProjectPath": "/home/herb/Desktop/AndyGoogle",
+    "GitUser": "CallMeChewy",
+    "GitEmail": "HerbBowers@gmail.com",
+    "ValidationResult": "PASSED",
+    "IssuesFound": 4,
+    "CriticalIssues": 0,
+    "HighIssues": 4,
+    "MediumIssues": 0,
+    "LowIssues": 0,
+    "CommitHash": "09b02fbb7172caba01f263992c3d5c618bd80f0c",
+    "CommitMessage": "Auto-update: 2025-07-14 12:09:49",
+    "FilesChanged": [],
+    "SecurityReport": {
+      "ProjectPath": ".",
+      "TotalIssues": 4,
+      "SeverityCounts": {
+        "CRITICAL": 0,
+        "HIGH": 4,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "CategoryCounts": {
+        "MISSING_PROTECTION": 4
+      },
+      "Issues": [
+        {
+          "Severity": "HIGH",
+          "Category": "MISSING_PROTECTION",
+          "Description": "Sensitive file 'Config/andygoogle_config.json' is not ignored",
+          "FilePath": "Config/andygoogle_config.json",
+          "LineNumber": null,
+          "Recommendation": "Add 'Config/andygoogle_config.json' to .gitignore"
+        },
+        {
+          "Severity": "HIGH",
+          "Category": "MISSING_PROTECTION",
+          "Description": "Sensitive file 'HTML/GoogleAuthorzeTest.html' is not ignored",
+          "FilePath": "HTML/GoogleAuthorzeTest.html",
+          "LineNumber": null,
+          "Recommendation": "Add 'HTML/GoogleAuthorzeTest.html' to .gitignore"
+        },
+        {
+          "Severity": "HIGH",
+          "Category": "MISSING_PROTECTION",
+          "Description": "Sensitive file 'Docs/Security/audit_config.json' is not ignored",
+          "FilePath": "Docs/Security/audit_config.json",
+          "LineNumber": null,
+          "Recommendation": "Add 'Docs/Security/audit_config.json' to .gitignore"
+        },
+        {
+          "Severity": "HIGH",
+          "Category": "MISSING_PROTECTION",
+          "Description": "Sensitive file 'WebPages/JS/GoogleDriveAuth.js' is not ignored",
+          "FilePath": "WebPages/JS/GoogleDriveAuth.js",
+          "LineNumber": null,
+          "Recommendation": "Add 'WebPages/JS/GoogleDriveAuth.js' to .gitignore"
+        }
+      ]
+    }
+  },
+  {
+    "Timestamp": "2025-07-14T12:25:13.915176",
+    "Operation": "AUTO_UPDATE",
+    "ProjectPath": "/home/herb/Desktop/AndyGoogle",
+    "GitUser": "CallMeChewy",
+    "GitEmail": "HerbBowers@gmail.com",
+    "ValidationResult": "BLOCKED",
+    "IssuesFound": 8,
+    "CriticalIssues": 4,
+    "HighIssues": 4,
+    "MediumIssues": 0,
+    "LowIssues": 0,
+    "CommitHash": "09b02fbb7172caba01f263992c3d5c618bd80f0c",
+    "CommitMessage": "Auto-update blocked due to security issues",
+    "FilesChanged": [],
+    "SecurityReport": {
+      "ProjectPath": ".",
+      "TotalIssues": 8,
+      "SeverityCounts": {
+        "CRITICAL": 4,
+        "HIGH": 4,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "CategoryCounts": {
+        "EXPOSED_CREDENTIALS": 4,
+        "MISSING_PROTECTION": 4
+      },
+      "Issues": [
+        {
+          "Severity": "CRITICAL",
+          "Category": "EXPOSED_CREDENTIALS",
+          "Description": "Sensitive file 'Config/andygoogle_config.json' is tracked in git",
+          "FilePath": "Config/andygoogle_config.json",
+          "LineNumber": null,
+          "Recommendation": "Remove with: git rm --cached Config/andygoogle_config.json"
+        },
+        {
+          "Severity": "CRITICAL",
+          "Category": "EXPOSED_CREDENTIALS",
+          "Description": "Sensitive file 'Docs/Security/audit_config.json' is tracked in git",
+          "FilePath": "Docs/Security/audit_config.json",
+          "LineNumber": null,
+          "Recommendation": "Remove with: git rm --cached Docs/Security/audit_config.json"
+        },
+        {
+          "Severity": "CRITICAL",
+          "Category": "EXPOSED_CREDENTIALS",
+          "Description": "Sensitive file 'HTML/GoogleAuthorzeTest.html' is tracked in git",
+          "FilePath": "HTML/GoogleAuthorzeTest.html",
+          "LineNumber": null,
+          "Recommendation": "Remove with: git rm --cached HTML/GoogleAuthorzeTest.html"
+        },
+        {
+          "Severity": "CRITICAL",
+          "Category": "EXPOSED_CREDENTIALS",
+          "Description": "Sensitive file 'WebPages/JS/GoogleDriveAuth.js' is tracked in git",
+          "FilePath": "WebPages/JS/GoogleDriveAuth.js",
+          "LineNumber": null,
+          "Recommendation": "Remove with: git rm --cached WebPages/JS/GoogleDriveAuth.js"
+        },
+        {
+          "Severity": "HIGH",
+          "Category": "MISSING_PROTECTION",
+          "Description": "Sensitive file 'Config/andygoogle_config.json' is not ignored",
+          "FilePath": "Config/andygoogle_config.json",
+          "LineNumber": null,
+          "Recommendation": "Add 'Config/andygoogle_config.json' to .gitignore"
+        },
+        {
+          "Severity": "HIGH",
+          "Category": "MISSING_PROTECTION",
+          "Description": "Sensitive file 'HTML/GoogleAuthorzeTest.html' is not ignored",
+          "FilePath": "HTML/GoogleAuthorzeTest.html",
+          "LineNumber": null,
+          "Recommendation": "Add 'HTML/GoogleAuthorzeTest.html' to .gitignore"
+        },
+        {
+          "Severity": "HIGH",
+          "Category": "MISSING_PROTECTION",
+          "Description": "Sensitive file 'Docs/Security/audit_config.json' is not ignored",
+          "FilePath": "Docs/Security/audit_config.json",
+          "LineNumber": null,
+          "Recommendation": "Add 'Docs/Security/audit_config.json' to .gitignore"
+        },
+        {
+          "Severity": "HIGH",
+          "Category": "MISSING_PROTECTION",
+          "Description": "Sensitive file 'WebPages/JS/GoogleDriveAuth.js' is not ignored",
+          "FilePath": "WebPages/JS/GoogleDriveAuth.js",
+          "LineNumber": null,
+          "Recommendation": "Add 'WebPages/JS/GoogleDriveAuth.js' to .gitignore"
+        }
+      ]
+    }
+  },
+  {
+    "Timestamp": "2025-07-14T12:27:33.780303",
+    "Operation": "AUTO_UPDATE",
+    "ProjectPath": "/home/herb/Desktop/AndyGoogle",
+    "GitUser": "CallMeChewy",
+    "GitEmail": "HerbBowers@gmail.com",
+    "ValidationResult": "BLOCKED",
+    "IssuesFound": 4,
+    "CriticalIssues": 4,
+    "HighIssues": 0,
+    "MediumIssues": 0,
+    "LowIssues": 0,
+    "CommitHash": "09b02fbb7172caba01f263992c3d5c618bd80f0c",
+    "CommitMessage": "Auto-update blocked due to security issues",
+    "FilesChanged": [
+      "Config/andygoogle_config.json",
+      "Docs/Security/audit_config.json",
+      "HTML/GoogleAuthorzeTest.html",
+      "WebPages/JS/GoogleDriveAuth.js"
+    ],
+    "SecurityReport": {
+      "ProjectPath": ".",
+      "TotalIssues": 4,
+      "SeverityCounts": {
+        "CRITICAL": 4,
+        "HIGH": 0,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "CategoryCounts": {
+        "EXPOSED_CREDENTIALS": 4
+      },
+      "Issues": [
+        {
+          "Severity": "CRITICAL",
+          "Category": "EXPOSED_CREDENTIALS",
+          "Description": "Sensitive file 'Docs/Security/audit_config.json' exists in git history but not in current commit",
+          "FilePath": "Docs/Security/audit_config.json",
+          "LineNumber": null,
+          "Recommendation": "Remove from history with: git filter-branch or BFG Repo-Cleaner"
+        },
+        {
+          "Severity": "CRITICAL",
+          "Category": "EXPOSED_CREDENTIALS",
+          "Description": "Sensitive file 'WebPages/JS/GoogleDriveAuth.js' exists in git history but not in current commit",
+          "FilePath": "WebPages/JS/GoogleDriveAuth.js",
+          "LineNumber": null,
+          "Recommendation": "Remove from history with: git filter-branch or BFG Repo-Cleaner"
+        },
+        {
+          "Severity": "CRITICAL",
+          "Category": "EXPOSED_CREDENTIALS",
+          "Description": "Sensitive file 'Config/andygoogle_config.json' exists in git history but not in current commit",
+          "FilePath": "Config/andygoogle_config.json",
+          "LineNumber": null,
+          "Recommendation": "Remove from history with: git filter-branch or BFG Repo-Cleaner"
+        },
+        {
+          "Severity": "CRITICAL",
+          "Category": "EXPOSED_CREDENTIALS",
+          "Description": "Sensitive file 'HTML/GoogleAuthorzeTest.html' exists in git history but not in current commit",
+          "FilePath": "HTML/GoogleAuthorzeTest.html",
+          "LineNumber": null,
+          "Recommendation": "Remove from history with: git filter-branch or BFG Repo-Cleaner"
+        }
+      ]
+    }
+  },
+  {
+    "Timestamp": "2025-07-14T12:35:01.649291",
+    "Operation": "AUTO_REMEDIATION",
+    "ProjectPath": "/home/herb/Desktop/AndyGoogle",
+    "GitUser": "CallMeChewy",
+    "GitEmail": "HerbBowers@gmail.com",
+    "ValidationResult": "REMEDIATED",
+    "IssuesFound": 4,
+    "CriticalIssues": 4,
+    "HighIssues": 0,
+    "MediumIssues": 0,
+    "LowIssues": 0,
+    "CommitHash": "09b02fbb7172caba01f263992c3d5c618bd80f0c",
+    "CommitMessage": "Auto-remediation of 4 security issues",
+    "FilesChanged": [
+      "Config/andygoogle_config.json",
+      "Docs/Security/audit_config.json",
+      "HTML/GoogleAuthorzeTest.html",
+      "WebPages/JS/GoogleDriveAuth.js"
+    ],
+    "SecurityReport": {
+      "TotalIssues": 4,
+      "SeverityCounts": {
+        "CRITICAL": 4,
+        "HIGH": 0,
+        "MEDIUM": 0,
+        "LOW": 0
+      },
+      "RemediationActions": [
+        {
+          "Timestamp": "2025-07-14T12:35:01.643559",
+          "Action": "CLEAN_HISTORY",
+          "FilePath": "Docs/Security/audit_config.json",
+          "Success": false,
+          "Details": "WARNING: git-filter-branch has a glut of gotchas generating mangled history\n\t rewrites.  Hit Ctrl-C before proceeding to abort, then use an\n\t alternative filtering tool such as 'git filter-repo'\n\t (https://github.com/newren/git-filter-repo/) instead.  See the\n\t filter-branch manual page for more details; to squelch this warning,\n\t set FILTER_BRANCH_SQUELCH_WARNING=1.\nProceeding with filter-branch...\n\nCannot rewrite branches: You have unstaged changes.\nAdditionally, your index contains uncommitted changes.\n",
+          "CommandUsed": "git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch \"Docs/Security/audit_config.json\" \"HTML/GoogleAuthorzeTest.html\" \"WebPages/JS/GoogleDriveAuth.js\" \"Config/andygoogle_config.json\"' --prune-empty --tag-name-filter cat -- --all",
+          "BackupCreated": "/home/herb/Desktop/AndyGoogle/Docs/Security/Backups/repo_backup_20250714_123450.bundle"
+        },
+        {
+          "Timestamp": "2025-07-14T12:35:01.643579",
+          "Action": "CLEAN_HISTORY",
+          "FilePath": "HTML/GoogleAuthorzeTest.html",
+          "Success": false,
+          "Details": "WARNING: git-filter-branch has a glut of gotchas generating mangled history\n\t rewrites.  Hit Ctrl-C before proceeding to abort, then use an\n\t alternative filtering tool such as 'git filter-repo'\n\t (https://github.com/newren/git-filter-repo/) instead.  See the\n\t filter-branch manual page for more details; to squelch this warning,\n\t set FILTER_BRANCH_SQUELCH_WARNING=1.\nProceeding with filter-branch...\n\nCannot rewrite branches: You have unstaged changes.\nAdditionally, your index contains uncommitted changes.\n",
+          "CommandUsed": "git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch \"Docs/Security/audit_config.json\" \"HTML/GoogleAuthorzeTest.html\" \"WebPages/JS/GoogleDriveAuth.js\" \"Config/andygoogle_config.json\"' --prune-empty --tag-name-filter cat -- --all",
+          "BackupCreated": "/home/herb/Desktop/AndyGoogle/Docs/Security/Backups/repo_backup_20250714_123450.bundle"
+        },
+        {
+          "Timestamp": "2025-07-14T12:35:01.643582",
+          "Action": "CLEAN_HISTORY",
+          "FilePath": "WebPages/JS/GoogleDriveAuth.js",
+          "Success": false,
+          "Details": "WARNING: git-filter-branch has a glut of gotchas generating mangled history\n\t rewrites.  Hit Ctrl-C before proceeding to abort, then use an\n\t alternative filtering tool such as 'git filter-repo'\n\t (https://github.com/newren/git-filter-repo/) instead.  See the\n\t filter-branch manual page for more details; to squelch this warning,\n\t set FILTER_BRANCH_SQUELCH_WARNING=1.\nProceeding with filter-branch...\n\nCannot rewrite branches: You have unstaged changes.\nAdditionally, your index contains uncommitted changes.\n",
+          "CommandUsed": "git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch \"Docs/Security/audit_config.json\" \"HTML/GoogleAuthorzeTest.html\" \"WebPages/JS/GoogleDriveAuth.js\" \"Config/andygoogle_config.json\"' --prune-empty --tag-name-filter cat -- --all",
+          "BackupCreated": "/home/herb/Desktop/AndyGoogle/Docs/Security/Backups/repo_backup_20250714_123450.bundle"
+        },
+        {
+          "Timestamp": "2025-07-14T12:35:01.643584",
+          "Action": "CLEAN_HISTORY",
+          "FilePath": "Config/andygoogle_config.json",
+          "Success": false,
+          "Details": "WARNING: git-filter-branch has a glut of gotchas generating mangled history\n\t rewrites.  Hit Ctrl-C before proceeding to abort, then use an\n\t alternative filtering tool such as 'git filter-repo'\n\t (https://github.com/newren/git-filter-repo/) instead.  See the\n\t filter-branch manual page for more details; to squelch this warning,\n\t set FILTER_BRANCH_SQUELCH_WARNING=1.\nProceeding with filter-branch...\n\nCannot rewrite branches: You have unstaged changes.\nAdditionally, your index contains uncommitted changes.\n",
+          "CommandUsed": "git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch \"Docs/Security/audit_config.json\" \"HTML/GoogleAuthorzeTest.html\" \"WebPages/JS/GoogleDriveAuth.js\" \"Config/andygoogle_config.json\"' --prune-empty --tag-name-filter cat -- --all",
+          "BackupCreated": "/home/herb/Desktop/AndyGoogle/Docs/Security/Backups/repo_backup_20250714_123450.bundle"
+        }
+      ],
+      "RemediationTimestamp": "2025-07-14T12:35:01.643677"
+    }
   }
 ]

@@ -160,6 +160,61 @@ class GitSecurityValidator:
                 FilePath=str(self.ProjectPath),
                 Recommendation="Manually verify tracked files"
             ))
+        
+        # Check git history for sensitive files
+        self._CheckGitHistoryForSensitiveFiles()
+    
+    def _CheckGitHistoryForSensitiveFiles(self):
+        """Check git history for sensitive files that were previously committed"""
+        try:
+            # Get all files that have ever existed in git history
+            Result = subprocess.run(
+                ['git', 'log', '--all', '--full-history', '--name-only', '--pretty=format:'],
+                cwd=self.ProjectPath,
+                capture_output=True,
+                text=True
+            )
+            
+            if Result.returncode == 0:
+                HistoryFiles = set(Result.stdout.splitlines())
+                HistoryFiles.discard('')  # Remove empty strings
+                
+                for FilePath in HistoryFiles:
+                    for Pattern in self.SensitivePatterns:
+                        if re.search(Pattern, FilePath, re.IGNORECASE):
+                            # Check if file is currently tracked
+                            CurrentlyTracked = self._IsFileCurrentlyTracked(FilePath)
+                            
+                            if not CurrentlyTracked:
+                                self.Issues.append(SecurityIssue(
+                                    Severity="CRITICAL",
+                                    Category="EXPOSED_CREDENTIALS",
+                                    Description=f"Sensitive file '{FilePath}' exists in git history but not in current commit",
+                                    FilePath=FilePath,
+                                    Recommendation=f"Remove from history with: git filter-branch or BFG Repo-Cleaner"
+                                ))
+                            break
+        except Exception as e:
+            self.Issues.append(SecurityIssue(
+                Severity="LOW",
+                Category="MISSING_PROTECTION",
+                Description=f"Could not check git history: {str(e)}",
+                FilePath=str(self.ProjectPath),
+                Recommendation="Manually verify git history for sensitive files"
+            ))
+    
+    def _IsFileCurrentlyTracked(self, FilePath: str) -> bool:
+        """Check if file is currently tracked in git"""
+        try:
+            Result = subprocess.run(
+                ['git', 'ls-files', '--error-unmatch', FilePath],
+                cwd=self.ProjectPath,
+                capture_output=True,
+                text=True
+            )
+            return Result.returncode == 0
+        except:
+            return False
     
     def _CheckSensitiveFilesInWorkingDir(self):
         """Check for sensitive files in working directory"""

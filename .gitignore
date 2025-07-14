@@ -95,6 +95,7 @@ secrets/
 
 # Specific sensitive files (replace overly broad *.json and *.js)
 Config/google_credentials.json
+Config/andygoogle_config.json
 Config/*_credentials.json
 Config/secrets.json
 Config/api_keys.json
@@ -103,6 +104,13 @@ Config/production_config.json
 *.key.json
 *_secret.json
 *_key.json
+
+# Sensitive HTML and JS files
+HTML/GoogleAuthorzeTest.html
+WebPages/JS/GoogleDriveAuth.js
+
+# Security audit configurations
+Docs/Security/audit_config.json
 
 # Specific JS files to exclude (not all JS files)
 Config/*.js

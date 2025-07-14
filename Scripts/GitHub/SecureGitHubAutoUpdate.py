@@ -23,6 +23,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 from Security.GitSecurityValidator import GitSecurityValidator
 from Security.SecurityAuditLogger import SecurityAuditLogger
+from Security.SecurityRemediator import SecurityRemediator
 
 class SecureGitHubAutoUpdater:
     """Enhanced GitHub auto-updater with security validation"""
@@ -36,6 +37,7 @@ class SecureGitHubAutoUpdater:
         # Initialize security components
         self.SecurityValidator = GitSecurityValidator(str(self.RepoPath))
         self.AuditLogger = SecurityAuditLogger(str(self.RepoPath))
+        self.SecurityRemediator = SecurityRemediator(str(self.RepoPath))
         
         # Ensure we're in a git repository
         if not (self.RepoPath / '.git').exists():
@@ -118,6 +120,36 @@ class SecureGitHubAutoUpdater:
                     print(f"   {Issue.Severity}: {Issue.Description}")
                     if Issue.Recommendation:
                         print(f"      Fix: {Issue.Recommendation}")
+            
+            # Offer automatic remediation
+            print("\n🔧 AUTOMATIC REMEDIATION AVAILABLE")
+            Response = input("Would you like to automatically fix these issues? (y/N): ").lower()
+            
+            if Response == 'y':
+                print("\n🔄 Starting automatic remediation...")
+                RemediationResult = self.SecurityRemediator.AutoRemediate(
+                    CleanHistory=True,
+                    UpdateGitignore=True,
+                    RemoveFiles=False,
+                    Interactive=False
+                )
+                
+                if RemediationResult.get("success", False):
+                    print("✅ Automatic remediation completed!")
+                    print("🔍 Re-validating security...")
+                    
+                    # Re-validate after remediation
+                    NewIssues = self.SecurityValidator.ValidateProject()
+                    NewSecurityReport = self.SecurityValidator.GenerateReport()
+                    
+                    if NewSecurityReport['SeverityCounts']['CRITICAL'] == 0:
+                        print("✅ Security validation now passes!")
+                        return True
+                    else:
+                        print("❌ Some critical issues remain - commit still blocked")
+                        return False
+                else:
+                    print("❌ Automatic remediation failed")
             
             # Log the blocked attempt
             AuditEntry = self.AuditLogger.LogSecurityValidation(
@@ -289,6 +321,8 @@ def main():
     parser.add_argument("--message", "-m", help="Commit message")
     parser.add_argument("--quiet", "-q", action="store_true", help="Quiet mode (less output)")
     parser.add_argument("--security-summary", "-s", action="store_true", help="Show security summary")
+    parser.add_argument("--auto-fix", action="store_true", help="Automatically fix security issues without prompts")
+    parser.add_argument("--no-history-clean", action="store_true", help="Skip git history cleaning during auto-fix")
     
     args = parser.parse_args()
     
@@ -299,6 +333,24 @@ def main():
         if args.security_summary:
             Updater.PrintSecuritySummary()
             return
+        
+        # Auto-fix security issues if requested
+        if args.auto_fix:
+            print("🔧 PRE-COMMIT AUTO-FIX ENABLED")
+            print("=" * 40)
+            
+            RemediationResult = Updater.SecurityRemediator.AutoRemediate(
+                CleanHistory=not args.no_history_clean,
+                UpdateGitignore=True,
+                RemoveFiles=False,
+                Interactive=False
+            )
+            
+            if RemediationResult.get("success", False):
+                print("✅ Auto-fix completed successfully!")
+            else:
+                print("❌ Auto-fix failed")
+                sys.exit(1)
         
         # Perform secure auto-update
         Success = Updater.SecureAutoUpdate(
