@@ -1,6 +1,6 @@
-# Andy - .gitignore
-# Generated: 2025-07-04
-# Standard: AIDEV-PascalCase-1.8
+# AndyGoogle - .gitignore
+# Generated: 2025-07-14
+# Standard: AIDEV-PascalCase-v2.1
 
 # Python
 __pycache__/
@@ -92,8 +92,22 @@ docs/build/
 anderson-library-service-key.json
 config/
 secrets/
-*.json
-*.js
+
+# Specific sensitive files (replace overly broad *.json and *.js)
+Config/google_credentials.json
+Config/*_credentials.json
+Config/secrets.json
+Config/api_keys.json
+Config/production_config.json
+*.secret.json
+*.key.json
+*_secret.json
+*_key.json
+
+# Specific JS files to exclude (not all JS files)
+Config/*.js
+Scripts/deploy.js
+Scripts/production.js
 
 # Directories to ignore
 node_modules/
