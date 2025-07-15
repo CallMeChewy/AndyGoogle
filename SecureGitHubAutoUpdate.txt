@@ -1,0 +1,53 @@
+(.venv) ~/Desktop/AndyGoogle$ python Scripts/GitHub/SecureGitHubAutoUpdate.py
+🔐 SECURE AUTO-UPDATE PROCESS
+========================================
+🔒 PERFORMING SECURITY VALIDATION
+------------------------------
+📋 Security Scan: 4 issues found
+   🚨 Critical: 4
+
+🚫 UPDATE BLOCKED - Security issues found!
+   CRITICAL: Sensitive file 'HTML/GoogleAuthorzeTest.html' exists in git history but not in current commit
+      Fix: Remove from history with: git filter-branch or BFG Repo-Cleaner
+   CRITICAL: Sensitive file 'Config/andygoogle_config.json' exists in git history but not in current commit
+      Fix: Remove from history with: git filter-branch or BFG Repo-Cleaner
+   CRITICAL: Sensitive file 'WebPages/JS/GoogleDriveAuth.js' exists in git history but not in current commit
+      Fix: Remove from history with: git filter-branch or BFG Repo-Cleaner
+   CRITICAL: Sensitive file 'Docs/Security/audit_config.json' exists in git history but not in current commit
+      Fix: Remove from history with: git filter-branch or BFG Repo-Cleaner
+
+🔧 AUTOMATIC REMEDIATION AVAILABLE
+Would you like to automatically fix these issues? (y/N): y
+
+🔄 Starting automatic remediation...
+🔒 AUTOMATIC SECURITY REMEDIATION
+==================================================
+
+📋 Found 4 security issues
+
+🔧 PERFORMING REMEDIATION
+------------------------------
+🧹 Cleaning 4 files from git history...
+   Create repository backup: ✅
+   ⚠️  This operation will rewrite git history!
+   💾 Repository backup created
+   Clean git history: ❌
+   ❌ Failed to clean git history
+   📝 Error: WARNING: git-filter-branch has a glut of gotchas generating mangled history
+         rewrites.  Hit Ctrl-C before proceeding to abort, then use an
+         alternative filtering tool such as 'git filter-repo'
+         (https://github.com/newren/git-filter-repo/) instead.  See the
+         filter-branch manual page for more details; to squelch this warning,
+         set FILTER_BRANCH_SQUELCH_WARNING=1.
+Proceeding with filter-branch...
+
+Cannot rewrite branches: You have unstaged changes.
+
+
+🔍 RE-VALIDATING SECURITY...
+⚠️  4 issues still remain
+✅ Automatic remediation completed!
+🔍 Re-validating security...
+❌ Some critical issues remain - commit still blocked
+❌ Auto-update aborted due to security issues
+(.venv) ~/Desktop/AndyGoogle$

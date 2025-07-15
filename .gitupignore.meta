@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "created": "2025-07-15T20:38:35.241225+00:00",
+  "user_decisions": {
+    "c8d1bd42-17bc-4463-9b58-b7343c9e16c5": {
+      "Pattern": "*.env",
+      "Decision": 

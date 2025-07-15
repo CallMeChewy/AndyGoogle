@@ -17,8 +17,8 @@ from datetime import datetime
 from typing import List, Dict, Optional, Tuple
 from dataclasses import dataclass, asdict
 
-from GitSecurityValidator import GitSecurityValidator, SecurityIssue
-from SecurityAuditLogger import SecurityAuditLogger
+from .GitSecurityValidator import GitSecurityValidator, SecurityIssue
+from .SecurityAuditLogger import SecurityAuditLogger
 
 @dataclass
 class RemediationAction:

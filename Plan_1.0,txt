@@ -1,0 +1,10 @@
+these first.
+- **Git Configuration Setup**
+- **Repository Connection Options**
+  - Clone Existing Repo
+  - Initialize New Repo
+  - Connect Local Repo
+
+  we need to nail down what the gitignore file has to be for each of these. cloen probably has good settup already. not guaranteed, but likely. New repo depends on project type, etc. local repo is a likely place for problems. this is where config/rules are not yet setup for sure since gitup doesn;t exist in it. this is where the problems are in the testing we have done so far.
+  It almost seems like we need a gui interface to do this right. for inserting gitup into an existing project with a existing .gitignore we need to do our own evaluation and suggest a .gitignore. the user should see both in some type of diff setup where changes can be made. the changes should then be validate against the filesystem and additional unresolved issues can be addressed again. we may need our own version of a .gitignore file. maybe .gitupignore to use with our system. that may be a way to resolve issues where the user wants to accept specific security issues such as a database that must be proesen for the app or documents with references that may just be exaples and not real data. with our own file we could include any metadata we might need, a history, somesort of audit trail, etc.
+  what do you think?

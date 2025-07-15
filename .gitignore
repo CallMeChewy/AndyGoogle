@@ -1,8 +1,10 @@
 # AndyGoogle - .gitignore
-# Generated: 2025-07-14
+# Generated: 2025-07-15  
 # Standard: AIDEV-PascalCase-v2.1
 
-# Python
+# ========================================
+# PYTHON STANDARD
+# ========================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -24,47 +26,145 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual Environments
+# ========================================
+# ENVIRONMENTS
+# ========================================
 venv/
 env/
 ENV/
 .venv/
 .env/
+.env
+.env.local
+.env.production
 
-# IDEs
+# ========================================
+# IDEs & EDITORS
+# ========================================
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# Anderson's Library Specific
-## Data/Databases/*.db
-## Data/Databases/*.db-*
+# ========================================
+# DATABASE FILES - CONTEXT AWARE
+# ========================================
+# User data databases (always sensitive)
+Data/Databases/MyLibrary.db
+Data/Databases/MyLibraryWeb.db
+Data/Databases/my_library.db
+Data/Databases/*_user_*.db
+Data/Databases/*_production_*.db
+
+# Configuration databases (potentially sensitive)
+Config/Production/*.db
+Config/*_credentials.db
+Config/*_secrets.db
+
+# Keep these database files (they're safe):
+# Data/help_options.db          # Help system database
+# Data/app_settings.db          # Application settings
+# Tests/fixtures/*.db           # Test data
+# Reference/*.db                # Reference data
+# Templates/*.db                # Database templates
+
+# ========================================
+# CONFIGURATION FILES - GRADUATED SECURITY
+# ========================================
+# High security configs
+Config/Production/
+Config/google_credentials.json
+Config/andygoogle_config.json
+Config/*_credentials.*
+Config/*_secrets.*
+Config/secrets.json
+Config/api_keys.json
+Config/production_config.json
+
+# Credential patterns
+*.secret.json
+*.key.json
+*_secret.json
+*_key.json
+*_credentials.json
+
+# Keep these config files (they're safe):
+# Config/app_settings.json      # Application settings
+# Config/defaults.json          # Default configuration
+# Config/schema.json            # Configuration schema
+
+# ========================================
+# AUTHENTICATION & API
+# ========================================
+HTML/GoogleAuthorzeTest.html
+WebPages/JS/GoogleDriveAuth.js
+Scripts/deploy.js
+Scripts/production.js
+
+# ========================================
+# DIRECTORIES - FULL EXCLUSION
+# ========================================
+# Development and testing
+Scripts/Testing/
+test-gitguard/
+TempBU/
+Archive/
+
+# Legacy and reference (but may contain useful examples)
+Legacy/SourceAndyWeb/Databases/
+Legacy/SourceAndyWeb/Config/
+Legacy/*/Databases/
+Reference_Materials/Legacy/*/Databases/
+
+# Documentation with examples (to avoid content scanning false positives)
+Docs/Security/audit_*.json
+Docs/Security/audit_summary.json
+ChatArchives/
+Scripts/GitHub/
+
+# ========================================
+# LARGE FILES & MEDIA
+# ========================================
+Assets/Books/
+Assets/Covers/
+Assets/Thumbs/
+**/Books/*
+**/Covers/*
+**/Thumbs/*
+
+# ========================================
+# TEMPORARY & CACHE
+# ========================================
 Data/Cache/
 Data/Backups/
-Logs/
-*.log
-
-# Sensitive Configuration
-Config/Production/secrets.json
-Config/Production/api_keys.json
-.env
-.env.local
-.env.production
-
-# Large Files
-## Assets/Books/
-## Assets/Covers/
-## Assets/Thumbs/
-
-# Temporary Files
 tmp/
 temp/
 *.tmp
 *.temp
+Logs/
+*.log
 
-# OS Generated
+# ========================================
+# COVERAGE & TESTING
+# ========================================
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.pytest_cache/
+.tox/
+
+# ========================================
+# DOCUMENTATION BUILDS
+# ========================================
+docs/_build/
+docs/build/
+
+# ========================================
+# OS GENERATED
+# ========================================
 .DS_Store
 .DS_Store?
 ._*
@@ -73,55 +173,19 @@ temp/
 ehthumbs.db
 Thumbs.db
 
-# Coverage Reports
-htmlcov/
-.coverage
-.coverage.*
-coverage.xml
-*.cover
-
-# Testing
-.pytest_cache/
-.tox/
-
-# Documentation builds
-docs/_build/
-docs/build/
-
-# Project-specific exclusions
-anderson-library-service-key.json
-config/
-secrets/
-
-# Specific sensitive files (replace overly broad *.json and *.js)
-Config/google_credentials.json
-Config/andygoogle_config.json
-Config/*_credentials.json
-Config/secrets.json
-Config/api_keys.json
-Config/production_config.json
-*.secret.json
-*.key.json
-*_secret.json
-*_key.json
-
-# Sensitive HTML and JS files
-HTML/GoogleAuthorzeTest.html
-WebPages/JS/GoogleDriveAuth.js
-
-# Security audit configurations
-Docs/Security/audit_config.json
-
-# Specific JS files to exclude (not all JS files)
-Config/*.js
-Scripts/deploy.js
-Scripts/production.js
-
-# Directories to ignore
+# ========================================
+# NODE.JS
+# ========================================
 node_modules/
-**/Books/*
-**/Covers/*
-**/Thumbs/*
 
-# Special exclusion for directories starting with '..'
+# ========================================
+# GITGUARD
+# ========================================
+.gitguard/logs/
+.gitguard/backups/
+
+# ========================================
+# SPECIAL PATTERNS
+# ========================================
+# Hidden directories starting with ..
 ..*

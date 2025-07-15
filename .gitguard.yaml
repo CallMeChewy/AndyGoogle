@@ -1,0 +1,27 @@
+audit:
+  compress_old_logs: true
+  enabled: true
+  include_content: false
+  log_format: json
+  retention_days: 90
+integration:
+  ci_cd_integration: false
+  github_checks: false
+notification:
+  console_notifications: true
+  email_alerts: false
+remediation:
+  clean_git_history: true
+  create_backups: true
+  interactive_mode: true
+  remove_files: false
+  update_gitignore: true
+security:
+  auto_fix_enabled: true
+  block_on_critical: false
+  block_on_high: false
+  custom_patterns: []
+  max_file_size_mb: 1
+  scan_file_contents: true
+  # For established projects - focus on current state, not history
+  scan_git_history: false  # This would be ideal but not currently supported
